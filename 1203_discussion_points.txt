@@ -1,0 +1,12 @@
+In this paper, we present a framework for self-supervised learning of representations from raw audio
+data. Our approach encodes speech audio via a multi-layer convolutional neural network and then
+masks spans of the resulting latent speech representations [26, 56], similar to masked language
+modeling [9]. The latent representations are fed to a Transformer network to build contextualized representations and the model is trained via a contrastive task where the true latent is to be distinguished
+from distractors [54, 49, 48, 28] (§ 2).
+
+As part of training, we learn discrete speech units [53, 32, 7, 18] via a gumbel softmax [24, 5]
+to represent the latent representations in the contrastive task (Figure 1) which we find to be more
+effective than non-quantized targets.
+
+After pre-training on unlabeled speech, the model is fine-tuned on labeled data with a Connectionist Temporal Classification (CTC) loss [14, 4] to be used for
+downstream speech recognition tasks (§ 3)
