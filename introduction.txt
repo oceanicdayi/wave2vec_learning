@@ -1,0 +1,24 @@
+Neural networks benefit from large quantities of labeled training data. 
+
+However, in many settings
+labeled data is much harder to come by than unlabeled data: current speech recognition systems
+require thousands of hours of transcribed speech to reach acceptable performance which is not
+available for the vast majority of the nearly 7,000 languages spoken worldwide [31].
+
+Learning purely
+from labeled examples does not resemble language acquisition in humans: infants learn language by
+listening to adults around them - a process that requires learning good representations of speech.
+
+In machine learning, self-supervised learning has emerged as a paradigm to learn general data
+representations from unlabeled examples and to fine-tune the model on labeled data. 
+
+This has been
+particularly successful for natural language processing [43, 45, 9] and is an active research area for
+computer vision [20, 2, 36, 19, 6].
+
+In this paper, we present a framework for self-supervised learning of representations from raw audio
+data. Our approach encodes speech audio via a multi-layer convolutional neural network and then
+masks spans of the resulting latent speech representations [26, 56], similar to masked language
+modeling [9]. 
+
+The latent representations are fed to a Transformer network to build contextualized representations and the model is trained via a contrastive task wh
